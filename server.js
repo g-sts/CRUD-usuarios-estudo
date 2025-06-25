@@ -1,10 +1,14 @@
 import express from 'express'
+import cors from 'cors'
+import { PrismaClient } from '@prisma/client'
 
 const app = express()
 const port = 3000
 const users = []
 
 app.use(express.json())
+
+app.use(cors())
 
 app.post('/usuarios', async (req, res) => {
 
